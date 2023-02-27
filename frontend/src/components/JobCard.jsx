@@ -2,7 +2,7 @@ import React from "react";
 import "../scss/JobCard.scss";
 const JobCard = () => {
   return (
-    <div className="job-card m-2 p-1">
+    <div className="job-card m-2 p-1 shadow-md">
       <div className="top-header">
         <h4>Big Data Corp</h4>
         <p>Posted on: January 12th</p>

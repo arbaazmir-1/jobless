@@ -14,7 +14,7 @@ const FilterBar = () => {
   const [minSalary, setMinSalary] = useState(0);
   const [maxSalary, setMaxSalary] = useState(10000);
   return (
-    <div className=" p-5 w-1/5 flex justify-center">
+    <div className=" p-5 w-1/5 flex justify-center shadow-md h-fit rounded-sm">
       <div className="filter-container flex flex-col">
         <div className="filter-item mb-5">
           <p className="text-sm">Profession</p>

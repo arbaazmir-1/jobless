@@ -22,7 +22,7 @@ const HomePage = () => {
           </button>
         </div>
         <div
-          className="job-desc-container w-2/4 h-4/5 bg-blue-200 
+          className="job-desc-container w-2/4 h-4/5
         hidden md:block
         "
         >
