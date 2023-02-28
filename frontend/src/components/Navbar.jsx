@@ -54,9 +54,9 @@ const Navbar = () => {
           </p>
         </div>
 
-        <div className="menu-options  md:w-2/4 justify-end items-center hidden md:flex lg:w-1/4">
+        <div className="menu-options  md:w-fit justify-end items-center hidden md:flex lg:w-fit">
           <button
-            className="w-1/4 m-1 h-10 bg-green-400 rounded-md text-white hover:bg-green-500 transition-all duration-300"
+            className="p-2 m-1 bg-teal-400 text-white rounded-md hover:bg-teal-500 transition-all duration-300"
             onClick={() => {
               changePath("/login");
             }}
@@ -64,12 +64,12 @@ const Navbar = () => {
             Login
           </button>
           <button
-            className="w-1/4 h-10 m-1 bg-blue-400 rounded-md text-white hover:bg-blue-500 transition-all duration-300"
+            className="p-2 m-1 bg-blue-400 text-white rounded-md hover:bg-blue-500 transition-all duration-300"
             onClick={() => {
               changePath("/signup");
             }}
           >
-            Sign Up
+            Signup
           </button>
         </div>
         <svg
@@ -111,39 +111,59 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {showMenu && (
-        <div className="w-full h-screen flex flex-col  items-center bg-white z-50 fixed top-20 left-0 p-5 md:hidden">
-          <p
-            className={`${
-              path === "/" && "active"
-            } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
-            onClick={() => {
-              changePath("/");
-            }}
-          >
-            Find Job
-          </p>
+        <div className="w-full h-screen flex flex-col   bg-white z-50 fixed top-20 left-0 p-5 md:hidden">
+          <div className="links flex flex-col w-full mb-5">
+            <p
+              className={`${
+                path === "/" && "active"
+              } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
+              onClick={() => {
+                changePath("/");
+              }}
+            >
+              Find Job
+            </p>
 
-          <p
-            className={`${
-              path === "/post" && "active"
-            } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
-            onClick={() => {
-              changePath("/post");
-            }}
-          >
-            Post Job
-          </p>
+            <p
+              className={`${
+                path === "/post" && "active"
+              } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
+              onClick={() => {
+                changePath("/post");
+              }}
+            >
+              Post Job
+            </p>
 
-          <p
-            className={`${
-              path === "/talentprogram" && "active"
-            } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
-            onClick={() => {
-              changePath("/talentprogram");
-            }}
-          >
-            Talent Program
-          </p>
+            <p
+              className={`${
+                path === "/talentprogram" && "active"
+              } p-2 hover:bg-gray-200  cursor-pointer transition-all duration-300`}
+              onClick={() => {
+                changePath("/talentprogram");
+              }}
+            >
+              Talent Program
+            </p>
+          </div>
+          <div className="buttons flex flex-col w-full">
+            <button
+              className="p-2 m-1 bg-teal-400 text-white rounded-md hover:bg-teal-500 transition-all duration-300"
+              onClick={() => {
+                changePath("/login");
+              }}
+            >
+              Login
+            </button>
+            <button
+              className="p-2 m-1 bg-blue-400 text-white rounded-md hover:bg-blue-500 transition-all duration-300"
+              onClick={() => {
+                changePath("/signup");
+              }}
+            >
+              Signup
+            </button>
+          </div>
         </div>
       )}
     </>
