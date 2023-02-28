@@ -106,10 +106,13 @@ const Signup = () => {
             </p>
           </div>
         </div>
-        <div className="left-side w-full h-full flex justify-center items-center md:w-1/2">
+        <div className="left-side w-full h-full flex justify-center  items-center md:w-1/2 bg-gradient-to-l from-blue-300 to-red-300 md:bg-gradient-to-t md:from-white md:to-white">
           {formStep === 1 && (
-            <div className="step-1 w-3/4 h-fit  bg-white shadow-md  m-auto  p-9 rounded-md flex-col">
-              <h1 className="text-4xl font-mono m-3">Signup</h1>
+            <div className="step-1 w-3/4 h-fit  bg-white bg-opacity-50 shadow-md  m-auto  p-9 rounded-md flex-col">
+              <h1 className="text-4xl font-mono m-3 cursor-pointer md:hidden block">
+                Jobless
+              </h1>
+              <h1 className="text-2xl font-mono m-3">Signup</h1>
               <p className="text-md font-sans m-3">
                 Are you a recruiter or a job seeker?
               </p>
@@ -123,7 +126,7 @@ const Signup = () => {
                     setPersonaleModel("recruiter");
                   }}
                 >
-                  <p className="text-2xl font-mono">Recruiter</p>
+                  <p className="text-xl font-mono">Recruiter</p>
                 </button>
                 <button
                   className="button flex flex-col items-center 
@@ -134,13 +137,13 @@ const Signup = () => {
                     setPersonaleModel("jobseeker");
                   }}
                 >
-                  <p className="text-2xl font-mono">Job Seeker</p>
+                  <p className="text-xl font-mono">Job Seeker</p>
                 </button>
               </div>
             </div>
           )}
           {formStep === 2 && personaleModel === "recruiter" && (
-            <div className="step-2 w-3/4 h-fit  bg-white shadow-md  m-auto  p-9 rounded-md flex-col">
+            <div className="step-2 w-3/4 h-fit  bg-white bg-opacity-50 shadow-md  m-auto  p-9 rounded-md flex-col">
               <h1 className="text-4xl font-mono m-3">Signup</h1>
 
               <div className="form flex flex-col justify-between mt-10 w-full">
@@ -149,6 +152,7 @@ const Signup = () => {
                   <input
                     type="text"
                     className="input w-full p-1 
+                    bg-transparent
                         border-b-2 border-blue-400  focus:outline-none focus:border-teal-400 transition-colors  ease-linear
                     "
                   />
@@ -158,6 +162,7 @@ const Signup = () => {
                   <input
                     type="email"
                     className="input w-full p-1 
+                        bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                   "
                   />
@@ -167,6 +172,7 @@ const Signup = () => {
                   <input
                     type="password"
                     className="input w-full p-1 
+                        bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                     "
                   />
@@ -178,6 +184,7 @@ const Signup = () => {
                   <input
                     type="password"
                     className="input w-full p-1 
+                        bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                     "
                   />
@@ -192,7 +199,7 @@ const Signup = () => {
                     setFormStep(3);
                   }}
                 >
-                  <p className="text-2xl font-mono">Next</p>
+                  <p className="text-xl font-mono">Next</p>
                 </button>
                 <button
                   className="button flex flex-col items-center
@@ -203,13 +210,13 @@ const Signup = () => {
                     setFormStep(1);
                   }}
                 >
-                  <p className="text-2xl font-mono">Back</p>
+                  <p className="text-xl font-mono">Back</p>
                 </button>
               </div>
             </div>
           )}
           {formStep === 3 && personaleModel === "recruiter" && (
-            <div className="step-3 w-3/4 h-fit  bg-white shadow-md  m-auto  p-9 rounded-md flex-col">
+            <div className="step-3 w-3/4 h-fit  bg-white bg-opacity-50 shadow-md  m-auto  p-9 rounded-md flex-col">
               <h1 className="text-4xl font-mono m-3">Signup</h1>
               <div className="form flex flex-col justify-between mt-10 w-full">
                 <div className="form-group flex flex-col m-1">
@@ -217,6 +224,7 @@ const Signup = () => {
                   <input
                     type="text"
                     className="input w-full p-1
+                        bg-transparent
                         border-b-2 border-blue-400  focus:outline-none focus:border-teal-400 transition-colors  ease-linear
                         "
                   />
@@ -226,6 +234,7 @@ const Signup = () => {
                   <input
                     type="email"
                     className="input w-full p-1
+                    bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                         "
                   />
@@ -237,6 +246,7 @@ const Signup = () => {
                   <input
                     type="text"
                     className="input w-full p-1
+                    bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                         "
                   />
@@ -246,6 +256,7 @@ const Signup = () => {
                   <input
                     type="text"
                     className="input w-full p-1
+                    bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                         "
                   />
@@ -257,6 +268,7 @@ const Signup = () => {
                   <input
                     type="text"
                     className="input w-full p-1
+                    bg-transparent
                         border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
                         "
                   />
@@ -271,7 +283,7 @@ const Signup = () => {
                     setFormStep(4);
                   }}
                 >
-                  <p className="text-2xl font-mono">Next</p>
+                  <p className="text-xl font-mono">Next</p>
                 </button>
                 <button
                   className="button flex flex-col items-center
@@ -282,7 +294,7 @@ const Signup = () => {
                     setFormStep(2);
                   }}
                 >
-                  <p className="text-2xl font-mono">Back</p>
+                  <p className="text-xl font-mono">Back</p>
                 </button>
               </div>
             </div>
