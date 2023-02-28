@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div className="w-2/5 m-auto my-5">
+    <div className="w-4/5 m-auto my-5 md:w-2/5">
       <div
         className="search-container flex flex-row justify-center items-center
         border-2 border-blue-400 rounded-md

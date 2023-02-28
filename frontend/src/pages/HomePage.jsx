@@ -9,7 +9,6 @@ const HomePage = () => {
   let jobs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div>
-      <Navbar />
       <SearchBar />
       <div className="middle-container w-11/12 flex flex-row  h-screen  m-auto">
         <FilterBar className="1/5 self-start" />

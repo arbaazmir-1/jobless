@@ -76,7 +76,12 @@ const JobCard = () => {
       <div className="job-desc">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
       </div>
-      <button>View</button>
+      <button
+        className="
+       bg-blue-400 rounded-md m-1 text-white hover:bg-blue-500"
+      >
+        View
+      </button>
     </div>
   );
 };
