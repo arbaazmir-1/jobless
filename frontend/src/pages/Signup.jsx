@@ -6,10 +6,14 @@ const Signup = () => {
   const [formStep, setFormStep] = useState(1);
   const [personaleModel, setPersonaleModel] = useState("");
   const [gobackModal, setGobackModal] = useState(false);
+  const [goBackStep, setGoBackStep] = useState(0);
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
     navigate(path);
+  };
+  const goBackWithModal = () => {
+    setFormStep(goBackStep);
   };
   return (
     <div>
@@ -53,7 +57,7 @@ const Signup = () => {
                   class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => {
                     setGobackModal(false);
-                    setFormStep(3);
+                    goBackWithModal();
                   }}
                 >
                   Go back
@@ -134,7 +138,7 @@ const Signup = () => {
                 "
                   onClick={() => {
                     setFormStep(2);
-                    setPersonaleModel("jobseeker");
+                    setPersonaleModel("candidate");
                   }}
                 >
                   <p className="text-xl font-mono">Job Seeker</p>
@@ -308,6 +312,121 @@ const Signup = () => {
                         "
                 onClick={() => {
                   setGobackModal(true);
+                  setGoBackStep(3);
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+                  />
+                </svg>
+
+                <p className="text-md font-mono"> Back</p>
+              </button>
+              <h1 className="text-4xl font-mono m-3">Signup</h1>
+              <p>
+                A verification link has been sent to your email address. Please
+                verify your email address to complete the registration process.
+              </p>
+              <div className="loading-spinner">
+                <div class="flex justify-center items-center">
+                  <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gray-900 m-5"></div>
+                </div>
+              </div>
+            </div>
+          )}
+          {formStep === 2 && personaleModel === "candidate" && (
+            <div className="step-2 w-3/4 h-fit  bg-white bg-opacity-50 shadow-md  m-auto  p-9 rounded-md flex-col">
+              <h1 className="text-4xl font-mono m-3">Signup</h1>
+
+              <div className="form flex flex-col justify-between mt-10 w-full">
+                <div className="form-group flex flex-col m-1">
+                  <label className="text-md font-sans p-1">Name</label>
+                  <input
+                    type="text"
+                    className="input w-full p-1 
+                  bg-transparent
+                      border-b-2 border-blue-400  focus:outline-none focus:border-teal-400 transition-colors  ease-linear
+                  "
+                  />
+                </div>
+                <div className="form-group flex flex-col m-1">
+                  <label className="text-md font-sans p-1">Email</label>
+                  <input
+                    type="email"
+                    className="input w-full p-1 
+                      bg-transparent
+                      border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
+                "
+                  />
+                </div>
+                <div className="form-group flex flex-col m-1">
+                  <label className="text-md font-sans p-1">Password</label>
+                  <input
+                    type="password"
+                    className="input w-full p-1 
+                      bg-transparent
+                      border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
+                  "
+                  />
+                </div>
+                <div className="form-group flex flex-col m-1">
+                  <label className="text-md font-sans p-1">
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    className="input w-full p-1 
+                      bg-transparent
+                      border-b-2 border-blue-400 focus:outline-none focus:border-teal-400 transition-colors delay-300 ease-linear
+                  "
+                  />
+                </div>
+
+                <button
+                  className="button flex flex-col items-center
+                      hover:bg-blue-400 transition-all duration-300 hover:text-white p-2 rounded-md
+                      mt-10
+                      "
+                  onClick={() => {
+                    setFormStep(3);
+                  }}
+                >
+                  <p className="text-xl font-mono">Next</p>
+                </button>
+                <button
+                  className="button flex flex-col items-center
+                      hover:bg-teal-400 transition-all duration-300 hover:text-white p-1 rounded-md
+                      mt-5
+                      "
+                  onClick={() => {
+                    setFormStep(1);
+                  }}
+                >
+                  <p className="text-xl font-mono">Back</p>
+                </button>
+              </div>
+            </div>
+          )}
+          {formStep === 3 && personaleModel === "candidate" && (
+            <div className="step-3 w-3/4 h-fit  bg-white shadow-md  m-auto  p-9 rounded-md flex-col">
+              <button
+                className="button flex flex-row w-fit items-center
+                         p-2 rounded-md
+                        mt-5
+                        "
+                onClick={() => {
+                  setGobackModal(true);
+                  setGoBackStep(2);
                 }}
               >
                 <svg
